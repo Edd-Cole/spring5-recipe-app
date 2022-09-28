@@ -2,6 +2,7 @@ package guru.springframework.domain;
 
 import javax.persistence.*;
 
+<<<<<<< HEAD
 @Entity
 public class Notes {
     @Id
@@ -9,6 +10,21 @@ public class Notes {
     private Long id;
     @OneToOne
     private Recipe recipe;
+=======
+/**
+ * Created by jt on 6/13/17.
+ */
+@Entity
+public class Notes {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToOne
+    private Recipe recipe;
+
+>>>>>>> 28aac476a3c62e53b8296bf1b1b60342f53c6e0b
     @Lob
     private String recipeNotes;
 

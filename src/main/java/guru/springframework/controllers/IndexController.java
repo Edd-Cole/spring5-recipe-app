@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
+<<<<<<< HEAD
 @Controller
 public class IndexController {
         private CategoryRepository categoryRepository;
@@ -29,4 +30,16 @@ public class IndexController {
 
                 return "index";
         }
+=======
+/**
+ * Created by jt on 6/1/17.
+ */
+@Controller
+public class IndexController {
+
+    @RequestMapping({"", "/", "/index"})
+    public String getIndexPage(){
+        return "index";
+    }
+>>>>>>> 28aac476a3c62e53b8296bf1b1b60342f53c6e0b
 }
