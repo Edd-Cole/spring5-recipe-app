@@ -6,5 +6,11 @@
 </head>
 <body>
 <h1>My Recipes!</h1>
+<ul th:each="recipe : ${recipes}">
+    <li th:text="${recipe.description}"></li>
+</ul>
+<ul th:each="measure : ${measures}">
+    <li th:text="${measure.getDescription()}"></li>
+</ul>
 </body>
 </html>
