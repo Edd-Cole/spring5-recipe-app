@@ -3,17 +3,9 @@ package guru.springframework.domain;
 import javax.persistence.*;
 import java.util.Set;
 
-<<<<<<< HEAD
-@Entity
-public class Recipe {
-=======
-/**
- * Created by jt on 6/13/17.
- */
 @Entity
 public class Recipe {
 
->>>>>>> 28aac476a3c62e53b8296bf1b1b60342f53c6e0b
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,21 +17,6 @@ public class Recipe {
     private String source;
     private String url;
     private String directions;
-<<<<<<< HEAD
-    @Enumerated(value = EnumType.STRING)
-    private Difficulty difficulty;
-
-    @Lob
-    private Byte[] image;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients;
-
-    @OneToOne(cascade= CascadeType.ALL)
-    private Notes notes;
-
-    @ManyToMany
-    @JoinTable(name = "recipe_category", joinColumns = @JoinColumn(name = "recipe_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
-=======
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients;
@@ -57,7 +34,6 @@ public class Recipe {
     @JoinTable(name = "recipe_category",
         joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
->>>>>>> 28aac476a3c62e53b8296bf1b1b60342f53c6e0b
     private Set<Category> categories;
 
     public Long getId() {
@@ -124,17 +100,6 @@ public class Recipe {
         this.directions = directions;
     }
 
-<<<<<<< HEAD
-    public Difficulty getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
-    }
-
-=======
->>>>>>> 28aac476a3c62e53b8296bf1b1b60342f53c6e0b
     public Byte[] getImage() {
         return image;
     }
@@ -143,8 +108,6 @@ public class Recipe {
         this.image = image;
     }
 
-<<<<<<< HEAD
-=======
     public Notes getNotes() {
         return notes;
     }
@@ -153,7 +116,6 @@ public class Recipe {
         this.notes = notes;
     }
 
->>>>>>> 28aac476a3c62e53b8296bf1b1b60342f53c6e0b
     public Set<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -162,21 +124,12 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-<<<<<<< HEAD
-    public Notes getNotes() {
-        return notes;
-    }
-
-    public void setNotes(Notes notes) {
-        this.notes = notes;
-=======
     public Difficulty getDifficulty() {
         return difficulty;
     }
 
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
->>>>>>> 28aac476a3c62e53b8296bf1b1b60342f53c6e0b
     }
 
     public Set<Category> getCategories() {

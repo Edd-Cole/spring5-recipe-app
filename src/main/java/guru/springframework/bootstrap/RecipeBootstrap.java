@@ -1,2 +1,3 @@
-package guru.springframework.bootstrap;public class RecipeBootstrap {
+package guru.springframework.bootstrap;
+public class RecipeBootstrap {
 }

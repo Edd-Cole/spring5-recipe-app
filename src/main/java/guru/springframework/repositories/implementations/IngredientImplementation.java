@@ -1,2 +1,3 @@
-package guru.springframework.repositories.implementations;public class IngredientImplementation {
+package guru.springframework.repositories.implementations;
+public class IngredientImplementation {
 }

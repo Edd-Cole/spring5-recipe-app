@@ -1,2 +1,3 @@
-package guru.springframework.domain;public class BaseEntity {
+package guru.springframework.domain;
+public class BaseEntity {
 }

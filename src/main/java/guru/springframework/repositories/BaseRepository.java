@@ -1,2 +1,3 @@
-package guru.springframework.repositories;public class BaseRepository {
+package guru.springframework.repositories;
+public class BaseRepository {
 }
