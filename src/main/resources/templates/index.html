@@ -8,9 +8,14 @@
 <h1>My Recipes!</h1>
 <ul th:each="recipe : ${recipes}">
     <li th:text="${recipe.description}"></li>
-</ul>
-<ul th:each="measure : ${measures}">
-    <li th:text="${measure.getDescription()}"></li>
+    <li th:text="${recipe.getCategories()}"></li>
+    <li th:text="${recipe.getPrepTime()}"></li>
+    <li th:text="${recipe.getCookTime()}"></li>
+    <li th:text="${recipe.getDifficulty()}"></li>
+    <ul th:each="ingredient : ${recipe.getIngredients()}">
+        <li><span th:text="${ingredient.getDescription()}"></span>: <span th:text="${ingredient.getAmount()}"></span>
+            <span th:text="${ingredient.getUom().getDescription()}"></span></li>
+    </ul>
 </ul>
 </body>
 </html>
