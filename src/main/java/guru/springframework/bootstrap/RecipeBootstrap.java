@@ -9,7 +9,6 @@ import guru.springframework.domain.UnitOfMeasure;
 import guru.springframework.repositories.CategoryRepository;
 import guru.springframework.repositories.RecipeRepository;
 import guru.springframework.repositories.UnitOfMeasureRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -22,7 +21,6 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@Slf4j
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
   
   private final CategoryRepository categoryRepository;
@@ -42,16 +40,13 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
   }
   
   private List<Recipe> getRecipes() {
-    log.info("Loading recipes into program");
     List<Recipe> recipes = new ArrayList<>(2);
-    log.debug("Initialising maps");
     Map<String, UnitOfMeasure> uomMap = new HashMap<>();
     unitOfMeasureRepository.findAll().iterator().forEachRemaining(uom -> uomMap.put(uom.getDescription(), uom));
     
     Map<String, Category> categoryMap = new HashMap<>();
     categoryRepository.findAll().iterator().forEachRemaining(category -> categoryMap.put(category.getDescription(), category));
     
-    log.debug("Creating Guacamole recipe");
     Recipe guac = new Recipe();
     guac.setDescription("Perfect Guacamole");
     guac.setPrepTime(10);
@@ -76,7 +71,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     
     recipes.add(guac);
     
-    log.debug("Creating Taco recipe");
     Recipe tacos = new Recipe();
     
     tacos.setDescription("Spicy Tacos");
